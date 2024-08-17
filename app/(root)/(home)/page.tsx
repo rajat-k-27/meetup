@@ -8,13 +8,7 @@ const Home = () => {
   const time= now.toLocaleTimeString('en-US', {
     hour:'2-digit', minute:'2-digit'
   });
-  const date = now.toLocaleDateString('en-US', {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  });
-
+ const date = (new Intl.DateTimeFormat('en-US', { dateStyle: 'full' })).format(now);
 
   return (
     <section className='flex size-full flex-col gap-10 text-white'>
